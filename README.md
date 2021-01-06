@@ -1,5 +1,12 @@
-hankquinlan.github.io
+Repo for lfnothias.github.io
 =====================
-This is demo data created by [Jonathan McGlone](http://jmcglone.com) and used in a [step-by-step beginners guide](http://jmcglone.com/guides/github-pages) to creating and hosting a personal website using GitHub and Jekyll. You can view the demo data at <http://hankquinlan.github.io> and read the guide at <http://jmcglone.com/guides/github-pages>. 
+The site for my academic CV available at [lfnothias.github.io](https://lfnothias.github.io).
 
-Users are free to copy and re-use any and all of the code contained here without contacting me.
+## Basic Instructions for Website Update
+- Make a markdown file locally with the concent.
+- Update the markdown file locally with MacDown. 
+- Export as HTML with MacDown for example.
+- Replace the content in the index.html from the website.
+
+
+The website was created thanks to the work of [Jonathan McGlone](http://jmcglone.com) and with [step-by-step beginners guide](http://jmcglone.com/guides/github-pages) to create and host a personal website using GitHub and Jekyll.
