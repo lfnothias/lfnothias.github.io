@@ -1,0 +1,716 @@
+/* Base styles and variables */
+:root {
+  /* CNRS Colors */
+  --md-primary-fg-color: #00284b;
+  --md-primary-fg-color--light: #8296a5;
+  --md-primary-fg-color--dark: #00284b;
+  --md-accent-fg-color: #8296a5;
+  --md-typeset-a-color: #6941eb;
+  --md-default-bg-color: #ebf0f5;
+  
+  /* CNRS Yellow */
+  --cnrs-yellow: #f9e800;
+  
+  /* Secondary Colors */
+  --vert-secondaire: #b0ee89;
+  --orange-secondaire: #ffbc75;
+  --bleu-secondaire: #9ae2ff;
+  
+  /* CNRS Fonts */
+  --md-text-font: "Satoshi", sans-serif;
+  --md-code-font: "IBM Plex Mono", monospace;
+  --md-title-font: "IBM Plex Sans", sans-serif;
+}
+
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,700&display=swap');
+
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--md-text-font), sans-serif;
+  line-height: 1.6;
+  background-color: var(--md-default-bg-color);
+  color: var(--md-primary-fg-color);
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--md-primary-fg-color);
+  text-decoration: none;
+  font-weight: 500; /* Increasing from 500 to 700 for bolder text */
+  letter-spacing: 0.0em;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--md-typeset-a-color);
+  text-decoration: underline; /* Adds underline on hover */
+}
+
+/* Navigation */
+.main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-image: linear-gradient(to right, var(--cnrs-yellow) 0%, rgba(249, 232, 0, 0.7) 8%, rgba(249, 232, 0, 0) 12%, rgba(0, 40, 75, 0.9) 40%, rgba(0, 40, 75, 0.9) 100%);
+  padding: 15px 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.main-nav.scrolled {
+  padding: 10px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.main-nav ul li {
+  margin: 0 20px;
+}
+
+.main-nav ul li a {
+  color: white;
+  font-family: var(--md-title-font), sans-serif;
+  font-size: 1.15rem; /* Increased by 15% from 1.1rem */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-left: 22px; /* Space for the circle */
+}
+
+.main-nav ul li a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  width: 15px;
+  height: 15px;
+  background: radial-gradient(circle, var(--cnrs-yellow) 0%, rgba(249, 232, 0, 0.4) 70%, rgba(249, 232, 0, 0) 100%);
+  border-radius: 50%;
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+  color: var(--cnrs-yellow);
+}
+
+.main-nav ul li a:hover::before {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+}
+
+/* Hero Section */
+.hero-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url('../img/trame/CNRS_trame_wave_light.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 0 20px;
+}
+
+.hero-content {
+  max-width: 800px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards 0.5s;
+}
+
+.hero-content img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  opacity: 0;
+  transform: scale(0.9);
+  animation: fadeInScale 1s ease forwards;
+}
+
+.hero-content h1 {
+  font-family: var(--md-title-font), sans-serif;
+  font-size: 3.2rem;
+  margin-bottom: 15px;
+  color: var(--md-primary-fg-color);
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: var(--md-primary-fg-color);
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.9rem;
+  color: var(--md-primary-fg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards 1.5s;
+}
+
+.scroll-indicator::after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-right: 2px solid var(--md-primary-fg-color);
+  border-bottom: 2px solid var(--md-primary-fg-color);
+  transform: rotate(45deg);
+  margin-top: 10px;
+  animation: bounce 2s infinite;
+}
+
+/* Section Styles */
+section {
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+}
+
+.about-section::before {
+  background-image: url('../img/trame/CNRS_trame_tissue_light.png');
+}
+
+.research-section::before {
+  background-image: url('../img/trame/CNRS_trame_dots_light.png');
+}
+
+.cv-section::before {
+  background-image: url('../img/trame/CNRS_trame_tree_light.png');
+}
+
+.lab-section::before {
+  background-image: url('../img/trame/CNRS_trame_leave_light.png');
+}
+
+.contact-section::before {
+  background-image: url('../img/trame/CNRS_trame_maze_light.png');
+}
+
+.vision-section::before {
+  background-image: url('../img/trame/CNRS_trame_stripes_light.png');
+}
+
+.section-container {
+  max-width: 1380px; /* Increased by 15% from 1200px */
+  width: 95%; /* Use full width of the container */
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+section.visible .section-container {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section h2 {
+  font-family: var(--md-title-font), sans-serif;
+  font-size: 2.7rem;
+  margin-bottom: 50px;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--cnrs-yellow);
+  transform: scaleX(0.3);
+  transform-origin: center;
+  transition: transform 0.5s ease;
+}
+
+section.visible h2::after {
+  transform: scaleX(1);
+}
+
+section h3 {
+  font-family: var(--md-title-font), sans-serif;
+  font-size: 2rem;
+  margin: 40px 0 20px;
+  color: var(--md-primary-fg-color);
+}
+
+section p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Styling for important keywords */
+section strong {
+  font-weight: 700;
+  color: var(--md-primary-fg-color);
+}
+
+.research-section strong {
+  font-weight: 700;
+  position: relative;
+  padding: 0 2px;
+}
+
+.research-item:nth-child(1) strong {
+  color: #008000; /* Darker green */
+  background-color: rgba(176, 238, 137, 0.15); /* Light vert-secondaire background */
+}
+
+.research-item:nth-child(2) strong {
+  color: #e67e22; /* Darker orange */
+  background-color: rgba(255, 188, 117, 0.15); /* Light orange-secondaire background */
+}
+
+.research-item:nth-child(3) strong {
+  color: #2980b9; /* Darker blue */
+  background-color: rgba(154, 226, 255, 0.15); /* Light bleu-secondaire background */
+}
+
+.research-item:nth-child(4) strong {
+  color: #b7a500; /* Darker yellow */
+  background-color: rgba(249, 232, 0, 0.15); /* Light cnrs-yellow background */
+}
+
+section em {
+  font-style: italic;
+  color: inherit;
+}
+/* Research intro paragraph styling */
+.research-section .section-container > p strong {
+  padding: 0 2px;
+  font-weight: 700;
+}
+
+/* HolobiomicsLab yellow styling */
+.research-section .section-container > p strong[style*="color: #b7a500"] {
+  color: #b7a500 !important;
+  background-color: rgba(249, 232, 0, 0.15);
+}
+
+/* Keywords color matching research containers */
+.research-section .section-container > p strong:nth-of-type(1):not([style]) {
+  color: #008000;
+  background-color: rgba(176, 238, 137, 0.15);
+}
+
+.research-section .section-container > p strong:nth-of-type(2):not([style]) {
+  color: #e67e22;
+  background-color: rgba(255, 188, 117, 0.15);
+}
+
+.research-section .section-container > p strong:nth-of-type(3):not([style]) {
+  color: #2980b9;
+  background-color: rgba(154, 226, 255, 0.15);
+}
+
+.research-section .section-container > p strong:nth-of-type(4):not([style]) {
+  color: #b7a500;
+  background-color: rgba(249, 232, 0, 0.15);
+}
+
+.research-section .section-container > p strong:nth-of-type(5):not([style]) {
+  color: #b7a500;
+  background-color: rgba(249, 232, 0, 0.15);
+}
+
+/* About Section */
+.about-section {
+  background-color: white;
+  text-align: center;
+}
+
+/* Research Section */
+.research-section {
+  text-align: center;
+}
+
+.research-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 450px), 1fr));
+  max-width: 1000px;
+  margin: 50px auto 0;
+  gap: 30px;
+}
+
+.research-item {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 4px solid var(--md-primary-fg-color);
+}
+
+.research-item:nth-child(1) {
+  border-top-color: var(--vert-secondaire);
+}
+
+.research-item:nth-child(2) {
+  border-top-color: var(--orange-secondaire);
+}
+
+.research-item:nth-child(3) {
+  border-top-color: var(--bleu-secondaire);
+}
+
+.research-item:nth-child(4) {
+  border-top-color: var(--cnrs-yellow);
+}
+
+.research-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.research-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--md-primary-fg-color);
+}
+
+.research-item:nth-child(1) h3 {
+  color: #008000; /* Darker green to match vert-secondaire */
+}
+
+.research-item:nth-child(2) h3 {
+  color: #e67e22; /* Darker orange to match orange-secondaire */
+}
+
+.research-item:nth-child(3) h3 {
+  color: #2980b9; /* Darker blue to match bleu-secondaire */
+}
+
+.research-item:nth-child(4) h3 {
+  color: #b7a500; /* Darker yellow to match cnrs-yellow */
+}
+
+.research-item p {
+  font-size: 1rem;
+}
+
+/* CV Section */
+.cv-section {
+  background-color: white;
+  text-align: center;
+}
+
+.cv-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.cv-content h3 {
+  margin-top: 40px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--md-accent-fg-color);
+}
+
+.cv-content ul {
+  list-style: none;
+  margin: 20px 0;
+}
+
+.cv-content ul li {
+  margin-bottom: 15px;
+  position: relative;
+  padding-left: 25px;
+}
+
+.cv-content ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--md-typeset-a-color);
+  border-radius: 50%;
+}
+
+.cv-content a.download-cv {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 25px;
+  background-color: var(--md-primary-fg-color);
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.cv-content a.download-cv:hover {
+  background-color: var(--md-typeset-a-color);
+  transform: translateY(-2px);
+}
+
+/* Profile links */
+.profile-links {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+  justify-content: flex-start;
+}
+
+.profile-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 15px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.profile-link:hover {
+  background-color: var(--md-typeset-a-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.profile-link img {
+  vertical-align: middle;
+}
+
+/* Lab Section */
+.lab-section {
+  text-align: center;
+}
+
+/* Vision Section */
+.vision-section {
+  background-color: white;
+  text-align: center;
+}
+
+.lab-logo {
+  max-width: 500px;
+  margin: 0 auto 40px;
+}
+
+.lab-logo img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.lab-logo img:hover {
+  transform: scale(1.02);
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: white;
+  text-align: center;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.contact-link {
+  margin: 0 20px;
+  padding: 15px 30px;
+  background-color: var(--cnrs-yellow);
+  color: var(--md-primary-fg-color);
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+  background-color: var(--md-typeset-a-color);
+  transform: translateY(-2px);
+  color: white;
+}
+
+/* Footer */
+footer {
+  background-color: var(--md-primary-fg-color);
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+footer a {
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  color: white;
+
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: rotate(45deg) translateY(0);
+  }
+  40% {
+    transform: rotate(45deg) translateY(-10px);
+  }
+  60% {
+    transform: rotate(45deg) translateY(-5px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.4rem;
+  }
+  
+  .hero-content img {
+    width: 180px;
+    height: 180px;
+  }
+  
+  section h2 {
+    font-size: 2.2rem;
+  }
+  
+  section h3 {
+    font-size: 1.7rem;
+  }
+  
+  .research-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .main-nav ul li {
+    margin: 0 10px;
+  }
+  
+  .main-nav ul li a {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+  
+  section {
+    padding: 70px 15px;
+  }
+  
+  section h2 {
+    font-size: 2rem;
+  }
+  
+  .main-nav ul li {
+    margin: 0 5px;
+  }
+  
+  .main-nav ul li a {
+    font-size: 0.9rem;
+  }
+}
+
+/* Utility Classes */
+.visible {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}

@@ -2,126 +2,209 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Welcome to My Website</title>
-  <style>
-    /* Reset some defaults */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background: #f4f4f4;
-      color: #333;
-    }
-    
-    header {
-      background: #333;
-      color: #fff;
-      padding: 20px 0;
-    }
-    
-    header .container {
-      width: 90%;
-      max-width: 1100px;
-      margin: auto;
-      overflow: hidden;
-    }
-    
-    header h1 {
-      float: left;
-    }
-    
-    header nav {
-      float: right;
-      margin-top: 10px;
-    }
-    
-    header nav ul {
-      list-style: none;
-    }
-    
-    header nav ul li {
-      display: inline;
-      margin-left: 20px;
-    }
-    
-    header nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-    
-    #showcase {
-      background: url('banner.jpg') no-repeat center center/cover;
-      min-height: 400px;
-      color: #fff;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    
-    #showcase h1 {
-      font-size: 55px;
-      margin-bottom: 10px;
-    }
-    
-    #showcase p {
-      font-size: 20px;
-    }
-    
-    .content {
-      padding: 20px;
-      background: #fff;
-      margin: 20px auto;
-      width: 90%;
-      max-width: 1100px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    
-    footer {
-      background: #333;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-      margin-top: 20px;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Louis-Félix Nothias | Scientific Researcher</title>
+  <meta name="description" content="Personal website of Dr. Louis-Félix Nothias, CNRS junior group leader and founder of the <strong style='color: #b7a500; background-color: rgba(249, 232, 0, 0.15);'>HolobiomicsLab</strong>">
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Favicon -->
+  <link rel="icon" href="img/logo/HolobiomicsLab_graphics_v1_favicon.png" type="image/png">
+  <!-- Font imports -->
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>My Simple Website</h1>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-      <div style="clear: both;"></div>
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#cv">CV</a></li>
+      <li><a href="#lab">Lab</a></li>
+      <li><a href="#vision">Vision</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <div class="hero-content">
+      <img src="img/mugshot/220405_LFX_Nothias_small.jpg" alt="Louis-Félix Nothias">
+      <h1>Louis-Félix Nothias, PhD</h1>
+      <p>Junior Group Leader / Professor Chair CNRS @Université Côte d'Azur</p>
+      <p>Affiliated Chair of Interdisciplinary Institute for Artificial Intelligence (3iA) Côte d'Azur</p>
     </div>
-  </header>
-  
-  <section id="showcase">
-    <div class="container">
-      <h1>Welcome!</h1>
-      <p>This is a simple, nicely styled page for GitHub Pages.</p>
+    <div class="scroll-indicator">
+      <span>Scroll Down</span>
     </div>
   </section>
-  
-  <div class="content">
-    <h2>About This Site</h2>
-    <p>This page is a starting point for your GitHub Pages site. Customize it as needed—update the text, add your own images, or change the styling to suit your preferences.</p>
-  </div>
-  
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="section-container">
+      <h2>About</h2>
+      <p>I am a <a href="https://www.cnrs.fr/en" target="_blank">CNRS</a> junior group leader based at the <a href="https://univ-cotedazur.fr/" target="_blank">University Côte d'Azur</a> & the <a href="https://3ia.univ-cotedazur.eu/" target="_blank">Interdisciplinary Institute for Artificial Intelligence (3iA) Côte d'Azur</a>, France. In 2023, I founded the <strong style="color: #00284b; background-color: rgba(249, 232, 0, 0.15);"><a href="https://www.holobiomicslab.cnrs.fr" target="_blank">HolobiomicsLab</a></strong>, where we develop <b>experimental and computational methods for studying host/microbial metabolism in holobionts and their microbiomes</b>.</p>
+      
+      <p>The lab is pioneering <b>advanced mass spectrometry (MS)-based metabolomics</b> techniques in <b>multi-omics</b> studies using <b>artificial intelligence</b>. Prior to this, I was a postdoctoral researcher at the <a href="https://dorresteinlab.ucsd.edu/" target="_blank">University of California San Diego</a> with <a href="https://scholar.google.com/citations?user=IsfIfVsAAAAJ&hl=en" target="_blank">Prof. Pieter Dorrestein</a> (2016-2021), where I contributed to the <a href="https://gnps.ucsd.edu/ProteoSAFe/static/gnps-splash.jsp" target="_blank">GNPS ecosystem</a>, and a research associate at the <a href="https://farma-unites.unige.ch/fr/phytochimie" target="_blank">University of Geneva</a> with <a href="https://scholar.google.ch/citations?user=27D7JbUAAAAJ&hl=en" target="_blank">Prof. Jean-Luc Wolfender</a> (2021-2023).</p>
+      
+      <p>I have contributed to both experimental and computational methods for <b>MS-based metabolomics annotation </b> (as postdoc with Prof. Dorrestein and in collaboration with the <a href="https://bio.informatik.uni-jena.de/" target="_blank">SIRIUS team</a>/<a href="https://scholar.google.de/citations?user=TWoYOQ4AAAAJ&hl=en" target="_blank">Sebastian Boecker lab</a>, see <a href="http://www.casmi-contest.org/2022/index.shtml" target="_blank">CASMI 2022</a>) and have pioneered integrative multi-omics studies for studying <b>microbiota biosynthetic potential and metabolism in ecosystems</b>, including through the <a href="https://www.nature.com/articles/s41564-022-01266-x/" target="_blank">collaborative Earth Microbiome Project</a>.</p>
+    </div>
+  </section>
+
+  <!-- Research Section -->
+  <section id="research" class="research-section">
+    <div class="section-container">
+      <h2>Research</h2>
+      <p>At <strong style="color: #b7a500; background-color: rgba(249, 232, 0, 0.15);">HolobiomicsLab</strong>, we are dedicated to integrate <strong style="color: #e67e22; background-color: rgba(255, 188, 117, 0.15);">advanced</strong>/<strong style="color:#008000; background-color: rgba(255, 188, 117, 0.15)">computational mass spectrometry</strong> and <strong style="color: #b7a500; background-color: rgba(249, 232, 0, 0.15);">artificial intelligence</strong> to decode the intricate metabolic interplay between hosts and their associated <strong style="color: #e67e22; background-color: rgba(255, 188, 117, 0.15);">microbiota</strong> (aka holobionts). Our <strong style="color: #2980b9; background-color: rgba(154, 226, 255, 0.15);">interdisciplinary approach</strong> spans from <strong style="color: #008000; background-color: rgba(176, 238, 137, 0.15);">deep metabolomics</strong> to <strong style="color: #b7a500; background-color: rgba(249, 232, 0, 0.15);">AI-driven data analysis</strong>, enabling breakthrough discoveries in <em>environmental science</em>, <em>microbial ecology</em>, and <em>holobiont biology/engineering</em>.</p>
+      
+      <div class="research-content">
+        <div class="research-item">
+          <h3>Deep Metabolomics for Environmental and Holobiont Studies</h3>
+          <p>We leverage <strong>advanced analytical chemistry and artificial intelligence</strong> to observe and decode the intricate metabolic interplay between hosts and their associated microbiota. Our approach enables the <b>systematic spectral annotation</b> of metabolites and the <b>sensitive detection of low-abundance metabolites</b>, including microbially derived metabolites that are inaccessible by conventional methods.</p>
+        </div>
+        
+        <div class="research-item">
+          <h3>Next Generation Mass Spectrometry for Microbial Metabolomics</h3>
+          <p>We employ <strong>state-of-the-art instrumentation</strong> and specialized expertise to conduct high-throughput mass spectrometry metabolomics across <b>thousands of microbial and environmental extracts</b>. Our approach integrates <b>customized analytical pipelines</b> with advanced pre-enrichment techniques and optimized chromatography.</p>
+        </div>
+        
+        <div class="research-item">
+          <h3>Holobiomics: Integrative Omics for Holobionts</h3>
+          <p>At <strong style="color: #b7a500; background-color: rgba(249, 232, 0, 0.15);">HolobiomicsLab</strong>, we employ <strong>cutting-edge omics technologies</strong>—including genomics, proteomics, transcriptomics, and metabolomics—paired with advanced computational methods and <strong>integrated artificial intelligence</strong> to provide a unified, comprehensive view of <b>complex biological systems</b>. Our current research investigates the <b>molecular crosstalk between marine host organisms and their associated microbiomes</b>, with marine holobionts—such as sea anemones and corals—serving as essential models for understanding how <b>host-microbe interactions drive adaptation to environmental stresses</b> and underpin <b>ecosystem resilience</b>.</p>
+        </div>
+        
+        <div class="research-item">
+          <h3>Artificial Intelligence Systems for Accelerating Metabolomics Research</h3>
+          <p>Our approach centers on developing <strong>AI-driven tools</strong> that streamline <strong>mass spectrometry data acquisition & interpretation</strong> in metabolomics, by designing AI systems that autonomously operate our mass spectrometers and assist in data interpretation while I co-coordinate the <a href="https://www.metabolinkai.net" target="_blank">MetaboLinkAI</a> project—which harnesses <b>open, integrative AI and knowledge graph frameworks to advance metabolomics data analysis</b> by uniting eight leading institutions from France and Switzerland, and applying natural language processing, graph mining, and machine learning to overcome key data challenges and accelerate breakthroughs in <b>biomarker discovery</b> and <b>chemodiversity exploration</b>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CV Section -->
+  <section id="cv" class="cv-section">
+    <div class="section-container">
+      <h2>Short CV</h2>
+      
+      <div class="cv-content">
+        <h3>Education</h3>
+        <p>2011 – 2015: PhD in Organic Chemistry (<a href="https://www.universita.corsica/en/" target="_blank">Université de Corse</a> and part-time at the <a href="https://icsn.cnrs.fr/en" target="_blank">ICSN-CNRS</a>)</p>
+        <p>2009 – 2011: Master in Phytochemistry, with high honors (<a href="https://www.universita.corsica/en/" target="_blank">Université de Corse</a>)</p>
+        <p>2007 – 2009: Bachelor's in Chemistry (<a href="https://www.universita.corsica/en/" target="_blank">Université de Corse</a>)</p>
+        
+        <h3>Current Positions</h3>
+        <p>Since 2023/06: Chaire de Prof. Junior, Centre National de la Recherche Scientifique (CNRS), <a href="https://univ-cotedazur.fr/laboratoires/institut-de-chimie-de-nice-icn-2Institut" target="_blank">Institut de Chimie de Nice</a> , <a href="https://univ-cotedazur.eu/" target="_blank"> Université Côte d'Azur</a>, Nice, France</p>
+        <p>Since 2024/01: <a href="https://3ia.univ-cotedazur.eu/" target="_blank"> Affiliated chair Institut Interdisciplinaire d'Intelligence Artificielle (3iA) Côte d'Azur </a>, Sophia-Antipolis, France</p>
+        
+        <h3>Previous Positions</h3>
+        <p>2021 – 2023: Research associate in analytical and computational chemistry, with <a href="https://scholar.google.ch/citations?user=27D7JbUAAAAJ&hl=en" target="_blank">Prof. Jean-Luc Wolfender</a>, <a href="https://www.unige.ch/sciences/en/larecherche/domainesderecherche/sciencespharmaceutiques/" target="_blank">Dept. of Pharmaceutical Sciences</a>, <a href="https://www.unige.ch/en/" target="_blank">University of Geneva</a>, Geneva, Switzerland</p>
+        <p>2016 – 2021: Post-doctoral researcher in experimental and computational metabolomics, with <a href="https://scholar.google.com/citations?user=IsfIfVsAAAAJ&hl=en" target="_blank">Prof. Pieter Dorrestein</a>, <a href="https://dorresteinlab.ucsd.edu/" target="_blank">Collaborative Mass Spectrometry Innovation Center</a>, <a href="https://pharmacy.ucsd.edu/" target="_blank">Skaggs School of Pharmacy</a>, <a href="https://cmi.ucsd.edu/" target="_blank">Center for Microbiome Innovation</a>, <a href="https://ucsd.edu/" target="_blank">University of California San Diego</a>, USA</p>
+        <p>2017 – 2018: MSCA Global postdoctoral researcher, <a href="https://icsn.cnrs.fr/en" target="_blank">Institut de Chimie des Substances Naturels</a>, CNRS, Gif-sur-Yvette, FR</p>
+        
+        <h3>Selected Publications</h3>
+        <ul>
+          <li>Hoffmann, M. A., Nothias, L.-F., Ludwig, M., et al. (2022). <strong>High-confidence structural annotation of metabolites absent from spectral libraries</strong>. <em>Nature Biotechnology</em>, 40, 411-421. DOI: <a href="https://doi.org/10.1038/s41587-021-01045-9" target="_blank">10.1038/s41587-021-01045-9</a></li>
+          <li>Dührkop, K., Nothias, L.-F., Fleischauer, M., et al. (2021). <strong>Systematic classification of unknown metabolites using high-resolution fragmentation mass spectra</strong>. <em>Nature Biotechnology</em>, 39, 462-471. DOI: <a href="https://doi.org/10.1038/s41587-020-0740-8" target="_blank">10.1038/s41587-020-0740-8</a></li>
+          <li>Nothias, L.-F., Petras, D., Schmid, R., et al. (2020). <strong>Feature-based molecular networking in the GNPS analysis environment</strong>. <em>Nature Methods</em>, 17, 905-908. DOI: <a href="https://doi.org/10.1038/s41592-020-0933-6" target="_blank">10.1038/s41592-020-0933-6</a></li>
+          <li>Shaffer, J.P., Nothias, LF., Thompson, L.R. et al. (2022). <strong>Standardized multi-omics of Earth's microbiomes reveals microbial and metabolite diversity</strong>. <em>Nature Microbiology</em>, 7, 2128–2150. DOI: <a href="https://doi.org/10.1038/s41564-022-01266-x" target="_blank">10.1038/s41564-022-01266-x</a></li>
+        </ul>
+        
+        <div class="profile-links">
+          <a href="https://scholar.google.com/citations?user=sGYAUOcAAAAJ&hl=en" target="_blank" class="profile-link">
+            <img src="https://scholar.google.com/favicon.ico" alt="Google Scholar" width="16" height="16"> Google Scholar
+          </a>
+          <a href="https://orcid.org/0000-0001-6711-6719" target="_blank" class="profile-link">
+            <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" width="16" height="16"> ORCID
+          </a>
+        </div>
+        
+        <h3>Grants & Funding</h3>
+        <ul>
+          <li>2025 – 2028: €450k – ANR-SNFS bilateral project (ANR-24-CE93-0012-01 | SNF 10002786), “MetaboLinkAI”, co-coordinated with <a href="https://imsb.ethz.ch/research/zamboni.html" target="_blank">Prof. Nicola Zamboni ETH Zurich</a></li>
+          <li>2025: €120k – <a href="https://miti.cnrs.fr/#:~:text=interface%20des%20disciplines%E2%80%A6-,La%20Mission%20pour%20les%20initiatives%20transverses%20et%20interdisciplinaires%20(MITI)%20a,r%C3%A9seaux%20m%C3%A9tiers%20et%20technologiques%20transverses." target="_blank">Mission Initiative Transverse et Interdisciplinaire du CNRS</a>, PhD fellowship for research on marine holobionts</li>
+          <li>2024–2025: €70k – Academie 1 IDEX Université Côte d'Azur (ANR-15-IDEX-01) funds a 1-year AI postdoc at 3iA Côte d'Azur (<a href="https://ds4h.univ-cotedazur.fr/recherche/projets-finances/projet-kg-bot" target="_blank">more info</a>).</li>
+          <li>2025 – 2028: €191k – ANR (ANR-24-CE44-1190), in partnership with the <a href="https://anr-pops.github.io/" target="_blank">ANR POPS Collaborative Research Project</a></li>
+          <li>2024 – 2028: €200k – <a href="https://www.fnr.lu/funding-instruments/afr/" target="_blank">FNR Luxembourg</a> (project 17994255), funding Lucas Pradi’s research on enhancing metabolite detection and annotation</li>
+          <li>2024 – 2027: €120k – <a href="https://ds4h.univ-cotedazur.eu/" target="_blank">EUR Spectrum</a> of Université Côte d'Azur and <a href="https://3ia.univ-cotedazur.eu/" target="_blank">3iA Côte d'Azur</a>, international PhD program with <a href="https://www.bittremieux.be/" target="_blank">Prof. Wout Bittremieux</a></li>
+          <li>2023 – 2028: €805k – CNRS Junior group leader (Chaire Prof. Junior, ANR-22-CPJ2-0048-01) and IDEX Université Côte d'Azur (ANR-15-IDEX-01), as a starting package</li>          
+        </ul>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Lab Section -->
+  <section id="lab" class="lab-section">
+    <div class="section-container">
+      <h2><span style="color: #b7a500; background-color: rgba(249, 232, 0, 0.15);">HolobiomicsLab</span></h2>
+      
+      <div class="lab-logo">
+        <a href="https://www.holobiomicslab.cnrs.fr" target="_blank">
+          <img src="img/logo/HolobiomicsLab_graphics_v1_logos_medium.png" alt="HolobiomicsLab Logo">
+        </a>
+      </div>
+      
+      <p>Part of the <a href="https://icn.univ-cotedazur.fr/" target="_blank">Institut de Chimie de Nice (ICN)</a> and the <a href="https://3ia.univ-cotedazur.eu/" target="_blank">Interdisciplinary Institute for Artificial Intelligence (3iA) Côte d'Azur</a> at <a href="https://univ-cotedazur.fr/" target="_blank">Université Côte d'Azur (UniCA)</a>, the <strong style="color: #b7a500; background-color: rgba(249, 232, 0, 0.15);">HolobiomicsLab</strong> is an interdisciplinary laboratory focused on the intersection of chemistry, biology, and artificial intelligence.</p>
+      
+      <p>Since July 2023, our mission is to create the next-generation toolbox for mass spectrometry-based metabolomics, deciphering the complex metabolic compositions and interactions in environments and living organisms, with a particular focus on the role of the microbiome in holobiont phenotypes.</p>
+      
+      <p>The <strong style="color: #b7a500; background-color: rgba(249, 232, 0, 0.15);">HolobiomicsLab</strong> specializes in experimental and computational metabolomics, integrating omics and artificial intelligence systems for hypothesis generation and data interpretation. Our tools and methods are modular, open, and applicable to any model organisms and environment, enabling us to accelerate insights in health, ecology, and bio-industries.</p>
+      
+      <p>The lab is situated in the Valrose Parc of Université Côte d'Azur, nestled in the heart of Nice—France's fifth-largest city—on the French Riviera between the Mediterranean Sea and the Maritime Alps. Our lab is set within a magnificent botanical garden, often regarded as one of the most pleasant campuses in France, providing an inspiring environment for scientific research.</p>
+    </div>
+  </section>
+
+
+  <!-- Vision Section (Personal & HolobiomicsLab) -->
+  <section id="vision" class="vision-section">
+    <div class="section-container">
+      <h2>Vision & Beyond the Lab</h2>
+      
+      <p>I am not just a researcher dedicated to science; I am a proud father of three incredible, curious, and playful kiddos who keep me on my toes—both in and out of the lab. My passions range from jamming to diverse music, embracing the outdoors (think barefoot runs in the forest, dream snorkeling in the Mediterranean, and relaxing in wild rivers), and I aspire to return to vigorous karate practice. Deeply concerned about <b>global ecocide and pollution</b>—and armed with a soft spot for artificial intelligence—I maintain a <b>global, integrative research perspective</b> rooted in <b>open science</b>, believing it can lead to a better understanding of life and our world.</p>
+
+      <p>At the core of my research philosophy is a commitment to <b>interdisciplinary collaboration</b>, embracing diversity of thought, background, and expertise. Science thrives on different perspectives, and by integrating <b>AI, mass spectrometry, and systems biology</b>, I aim to contribute to a holistic understanding of complex biological systems. In <b style="color: #b7a500; background-color: rgba(249, 232, 0, 0.15);">HolobiomicsLab</b>, we strive to foster inclusivity and equitable access to scientific knowledge, recognizing that <b>open science</b> and <b>collective intelligence</b> are crucial for tackling grand challenges like climate change, biodiversity loss, and human health.</p>
+
+      <p>Having spent many years of my life amid libraries and the wilds of nature, I reserve a couple of days each week for 14-hour deep work sessions. I blend scientific rigor with a healthy dose of humor and adventure—a perspective shaped by growing up in bustling, diverse Paris, enjoying blessed Corsican summers in the village, and cherishing thrilling times in California. This outlook is further enriched by my love for discovering other cultures and their diverse perspectives, which continuously inspires collaboration and fresh insights.</p>
+
+      <p>We are what we eat, so I like to think my metabolism—powered by tea, coffee, and hearty bowls of rice, beans, lentils, nuts, cabbage, apple, and oats—is a little metabolomics experiment in itself. But beyond just food, we are also what we learn, share, and explore. If you’d like to learn more about the ethos of <b style="color: #b7a500; background-color: rgba(249, 232, 0, 0.15);">HolobiomicsLab</b>, our approach to <b>open science, diversity, and interdisciplinary research</b>, visit our <a href="https://holobiomicslab.eu/about-us" target="_blank">Diversity Statement & Vision</a>.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="section-container">
+      <h2>Contact</h2>
+      
+      <p>For more information, check out the <a href="https://www.holobiomicslab.cnrs.fr" target="_blank" <strong style="color: #b7a500; background-color: rgba(249, 232, 0, 0.15);">HolobiomicsLab</strong></a> website.</p>
+      
+      <div class="contact-links">
+        <a href="https://www.holobiomicslab.cnrs.fr" target="_blank" class="contact-link">
+          <img src="img/logo/HolobiomicsLab_graphics_v1_favicon.png" alt="HolobiomicsLab" width="24" height="24" style="margin-right: 8px; vertical-align: middle;">Visit the <b>HolobiomicsLab Website</b>
+        </a>
+        <a href="https://bsky.app/profile/holobiomicslab.bsky.social" target="_blank" class="contact-link">
+          <img src="img/logo/bluesky_Logo.png" alt="Bluesky" width="24" height="24" style="margin-right: 8px; vertical-align: middle;">Follow us on Bluesky
+        </a>
+        <a href="https://github.com/lfnothias" target="_blank" class="contact-link">
+            <img src="https://camo.githubusercontent.com/4374f0b29a45f7d158ec8fe94398eb90f4ac94c03d6b99346b99e916e5157cb9/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f706e672f6769746875622e706e67" alt="GitHub" width="24" height="24" style="margin-right: 8px; vertical-align: middle;"> @lfnothias
+        </a>
+        <a href="https://github.com/holobiomicslab" target="_blank" class="contact-link">
+            <img src="https://camo.githubusercontent.com/4374f0b29a45f7d158ec8fe94398eb90f4ac94c03d6b99346b99e916e5157cb9/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f706e672f6769746875622e706e67" alt="HolobiomicsLab GitHub" width="24" height="24" style="margin-right: 8px; vertical-align: middle;"> @HolobiomicsLab
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Your Name. All Rights Reserved.</p>
+
+    <p>&copy; 2025 Louis-Félix Nothias.
+      <a href="https://github.com/holobiomicslab/HolobiomicsLabLogosAndGraphics?tab=LGPL-3.0-1-ov-file#readme" target="_blank">
+        Content licensed under the LGPL-3.0
+      </a>
+    </p>
   </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
 </body>
 </html>
