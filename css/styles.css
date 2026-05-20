@@ -570,6 +570,9 @@ section em {
 }
 
 .contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   margin: 0 20px;
   padding: 15px 30px;
   background-color: var(--cnrs-yellow);
@@ -577,6 +580,11 @@ section em {
   border-radius: 5px;
   font-weight: bold;
   transition: all 0.3s ease;
+}
+
+.contact-icon {
+  flex: 0 0 auto;
+  fill: currentColor;
 }
 
 .contact-link:hover {
